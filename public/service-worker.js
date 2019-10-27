@@ -4,6 +4,7 @@ self.addEventListener('install', function(evt) {
     console.log('The service worker is being installed.');
     evt.waitUntil(caches.open(CACHE).then(function (cache) {
         cache.addAll([
+          '/',
           './index.html',
           './demo.js',
           './style.css',
