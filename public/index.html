@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>My First PWA</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
+    <!-- View port stuff-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 ">
+
+
+    <!-- logo on ios-->
+    <link rel="icon" type="image/png" href="./images/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./images/icons/icon-192x192.png" />
+    <script src="demo.js" ></script>
+    <!-- Link to the manifest -->
+    <link rel="manifest" href="./manifest.json">
+  </head>
+
+  <body>
+    <h1 class="vertical-container">Hello.</h1>
+    <div class="vertical-container">      
+      <input type="number" onblur="updateInput(this.value)"> 
+    </div>
+    <div class="vertical-container" >
+        <div id="container"></div>
+    </div>
+  </body>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    } else {
+      console.log('service worker is not supported.');
+    }
+  </script>
+</html>
